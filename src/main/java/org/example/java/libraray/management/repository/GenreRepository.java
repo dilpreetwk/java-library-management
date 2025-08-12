@@ -1,17 +1,20 @@
 package org.example.java.libraray.management.repository;
 
 import org.example.java.libraray.management.model.Genre;
+import org.example.java.libraray.management.util.GenreUtil;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicLong;
 
 public class GenreRepository {
 
     private final Map<Long, Genre> genreMap = new HashMap<>();
-    private final AtomicLong idGenerator = new AtomicLong(1);
+
+    public GenreRepository() {
+        genreMap.putAll(GenreUtil.defaultSeedGenreMap());
+    }
 
     public Genre findById(Long id) {
         if (!genreMap.containsKey(id)) {
@@ -25,9 +28,9 @@ public class GenreRepository {
         return new ArrayList<>(genreMap.values());
     }
 
-    public Genre create(Genre genre ) {
+    public Genre create(Genre genre) {
         if (genre.getId() == null) {
-            genre.setId(idGenerator.getAndIncrement());
+            throw new RuntimeException("Genre ID cannot be null");
         }
 
         genreMap.put(genre.getId(), genre);
@@ -59,7 +62,7 @@ public class GenreRepository {
         String searchLower = search.toLowerCase();
 
         return genreMap.values().stream()
-                .filter(genre->
+                .filter(genre ->
                         genre.getName().toLowerCase().contains(searchLower))
                 .toList();
     }

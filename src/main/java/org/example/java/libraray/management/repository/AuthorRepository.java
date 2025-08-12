@@ -1,17 +1,20 @@
 package org.example.java.libraray.management.repository;
 
 import org.example.java.libraray.management.model.Author;
+import org.example.java.libraray.management.util.AuthorUtil;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicLong;
 
 public class AuthorRepository {
 
     private final Map<Long, Author> authorMap = new HashMap<>();
-    private final AtomicLong idGenerator = new AtomicLong(1);
+
+    public AuthorRepository(){
+        authorMap.putAll(AuthorUtil.defaultSeedAuthorMap());
+    }
 
     public Author findById(Long id) {
         if (!authorMap.containsKey(id)) {
@@ -27,7 +30,7 @@ public class AuthorRepository {
 
     public Author create(Author author) {
         if (author.getId() == null) {
-            author.setId(idGenerator.getAndIncrement());
+            throw new RuntimeException("Author ID cannot be null");
         }
 
         authorMap.put(author.getId(), author);
