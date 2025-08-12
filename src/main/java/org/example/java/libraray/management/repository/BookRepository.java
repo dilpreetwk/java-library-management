@@ -28,7 +28,7 @@ public class BookRepository {
         return new ArrayList<>(bookMap.values());
     }
 
-    public Book create(Book book) {
+    public Book add(Book book) {
         if (book.getId() == null) {
             throw new RuntimeException("Book ID cannot be null");
         }
@@ -64,7 +64,7 @@ public class BookRepository {
         return bookMap.values().stream()
                 .filter(book ->
                         book.getTitle().toLowerCase().contains(searchLower) ||
-                                book.getAuthor().getName().toLowerCase().contains(searchLower))
+                                book.getAuthor().toLowerCase().contains(searchLower))
                 .toList();
     }
 }

@@ -10,22 +10,20 @@ public class Book {
 
     private Long id;
     private String title;
-    private Author author;
-    private Set<Genre> genres;
+    private String author;
+    private String genres;
 
     @Override
     public String toString() {
         return String.format(
                 "📘 Book ID: %d%n" +
                         "Title: %s%n" +
-                        "%s" +
-                        "%s",
+                        "Author: %s%n" +
+                        "Genres: %s%n",
                 id,
                 title,
-                author.toString(),
-                genres.stream()
-                        .map(Genre::toString)
-                        .collect(Collectors.joining())
+                author,
+                genres
         );
     }
 }
