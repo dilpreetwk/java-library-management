@@ -18,7 +18,9 @@ public class LibraryCLI {
                 case "2" -> ServiceRegistry.bookService().updateBook();
                 case "3" -> ServiceRegistry.bookService().listBooks();
                 case "4" -> ServiceRegistry.bookService().searchBooks();
-                case "5" -> {
+                case "5" -> ServiceRegistry.userService().addUser();
+                case "6" -> ServiceRegistry.userService().listUsers();
+                case "7" -> {
                     System.out.println("Exiting the application. Goodbye!");
                     scanner.close();
                     return;

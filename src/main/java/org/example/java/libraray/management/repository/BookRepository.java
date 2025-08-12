@@ -37,13 +37,12 @@ public class BookRepository {
         return book;
     }
 
-    public Book update(Book book) {
+    public void update(Book book) {
         if (book.getId() == null || !bookMap.containsKey(book.getId())) {
             throw new RuntimeException("Book not found with id: " + book.getId());
         }
 
         bookMap.put(book.getId(), book);
-        return book;
     }
 
     public Book delete(Long id) {

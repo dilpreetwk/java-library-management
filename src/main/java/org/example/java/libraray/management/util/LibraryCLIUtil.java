@@ -8,7 +8,9 @@ public class LibraryCLIUtil {
         System.out.println("2. Update Book");
         System.out.println("3. List Books");
         System.out.println("4. Search Book");
-        System.out.println("5. Exit");
+        System.out.println("5. Add User");
+        System.out.println("6. List Users");
+        System.out.println("7. Exit");
         System.out.print("Choose an option: ");
     }
 }
