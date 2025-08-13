@@ -1,5 +1,6 @@
 package org.example.java.libraray.management.repository;
 
+import org.example.java.libraray.management.exception.GlobalException;
 import org.example.java.libraray.management.model.User;
 import org.example.java.libraray.management.util.UserUtil;
 
@@ -22,7 +23,7 @@ public class UserRepository {
 
     public User add(User user) {
         if (user.getId() == null) {
-            throw new RuntimeException("User ID cannot be null");
+            throw new GlobalException("User ID cannot be null");
         }
 
         userMap.put(user.getId(), user);

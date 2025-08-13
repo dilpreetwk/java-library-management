@@ -1,5 +1,6 @@
 package org.example.java.libraray.management.repository;
 
+import org.example.java.libraray.management.exception.GlobalException;
 import org.example.java.libraray.management.model.Borrow;
 import org.example.java.libraray.management.util.BorrowUtil;
 
@@ -22,7 +23,7 @@ public class BorrowRepository {
 
     public Borrow returnBook(Long id) {
         if (!borrowMap.containsKey(id)) {
-            throw new RuntimeException("Borrow record not found with id: " + id);
+            throw new GlobalException("Borrow record not found with id: " + id);
         }
 
         return borrowMap.remove(id);

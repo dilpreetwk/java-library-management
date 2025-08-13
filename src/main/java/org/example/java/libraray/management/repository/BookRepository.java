@@ -1,5 +1,6 @@
 package org.example.java.libraray.management.repository;
 
+import org.example.java.libraray.management.exception.GlobalException;
 import org.example.java.libraray.management.model.Book;
 import org.example.java.libraray.management.util.BookUtil;
 
@@ -18,7 +19,7 @@ public class BookRepository {
 
     public Book findById(Long id) {
         if (!bookMap.containsKey(id)) {
-            throw new RuntimeException("Book not found with id: " + id);
+            throw new GlobalException("Book not found with id: " + id);
         }
 
         return bookMap.get(id);
@@ -30,7 +31,7 @@ public class BookRepository {
 
     public Book add(Book book) {
         if (book.getId() == null) {
-            throw new RuntimeException("Book ID cannot be null");
+            throw new GlobalException("Book ID cannot be null");
         }
 
         bookMap.put(book.getId(), book);
@@ -39,7 +40,7 @@ public class BookRepository {
 
     public void update(Book book) {
         if (book.getId() == null || !bookMap.containsKey(book.getId())) {
-            throw new RuntimeException("Book not found with id: " + book.getId());
+            throw new GlobalException("Book not found with id: " + book.getId());
         }
 
         bookMap.put(book.getId(), book);
@@ -47,7 +48,7 @@ public class BookRepository {
 
     public Book delete(Long id) {
         if (!bookMap.containsKey(id)) {
-            throw new RuntimeException("Book not found with id: " + id);
+            throw new GlobalException("Book not found with id: " + id);
         }
 
         return bookMap.remove(id);
