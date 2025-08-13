@@ -4,14 +4,21 @@ import org.example.java.libraray.management.exception.GlobalException;
 import org.example.java.libraray.management.model.Book;
 import org.example.java.libraray.management.util.BookUtil;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.concurrent.atomic.AtomicLong;
 
 public class BookRepository {
 
     private final Map<Long, Book> bookMap = new HashMap<>();
+    private final AtomicLong idGenerator;
 
     public BookRepository() {
         bookMap.putAll(BookUtil.defaultSeedBookMap());
+        idGenerator = new AtomicLong(bookMap.size() + 1);
     }
 
     public Book findById(Long id) {
@@ -24,10 +31,7 @@ public class BookRepository {
     }
 
     public Book add(Book book) {
-        if (book.getId() == null) {
-            throw new GlobalException("Book ID cannot be null");
-        }
-
+        book.setId(idGenerator.getAndIncrement());
         bookMap.put(book.getId(), book);
         return book;
     }

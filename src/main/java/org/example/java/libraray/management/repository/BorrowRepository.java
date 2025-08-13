@@ -8,17 +8,22 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicLong;
 
 public class BorrowRepository {
 
     private final Map<Long, Borrow> borrowMap = new HashMap<>();
+    private final AtomicLong idGenerator;
 
     public BorrowRepository() {
         borrowMap.putAll(BorrowUtil.defaultSeedBorrowMap());
+        idGenerator = new AtomicLong(borrowMap.size() + 1);
     }
 
     public Borrow borrowBook(Borrow borrow) {
-        return borrowMap.put(borrow.getId(), borrow);
+        borrow.setId(idGenerator.incrementAndGet());
+        borrowMap.put(borrow.getId(), borrow);
+        return borrow;
     }
 
     public Borrow returnBook(Long id) {

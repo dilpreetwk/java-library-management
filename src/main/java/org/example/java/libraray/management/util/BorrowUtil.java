@@ -54,9 +54,6 @@ public class BorrowUtil {
     public static BorrowOperationDTO inputBorrowOperationData() {
         BorrowOperationDTO dto = new BorrowOperationDTO();
 
-        System.out.print("Enter Borrow Id: ");
-        dto.setId(Long.parseLong(scanner.nextLine().trim()));
-
         System.out.print("Enter Book Id: ");
         dto.setBookId(Long.parseLong(scanner.nextLine().trim()));
 

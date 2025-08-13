@@ -40,7 +40,6 @@ public class BorrowService {
         }
 
         Borrow borrow = new Borrow();
-        borrow.setId(borrowOperationDTO.getId());
         borrow.setBook(book);
         borrow.setUser(user);
         borrow.setBorrowDate(LocalDate.now());

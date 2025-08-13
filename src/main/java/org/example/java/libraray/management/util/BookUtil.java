@@ -55,9 +55,6 @@ public class BookUtil {
     public static Book inputBookAddDetails() {
         Book book = new Book();
 
-        System.out.print("Enter Book ID: ");
-        book.setId(Long.parseLong(scanner.nextLine()));
-
         System.out.print("Enter Book Title: ");
         book.setTitle(scanner.nextLine());
 
@@ -71,11 +68,6 @@ public class BookUtil {
     }
 
     public static Book inputBookUpdateDetails(Book existingBook) {
-        if (existingBook == null) {
-            System.out.println("❌ No book found to update.");
-            return null;
-        }
-
         Book updatedBook = new Book();
         updatedBook.setId(existingBook.getId());
 

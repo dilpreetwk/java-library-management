@@ -38,10 +38,6 @@ public class UserUtil {
     public static User inputUserAddDetails(){
         User user = new User();
 
-        System.out.print("Enter User ID: ");
-        user.setId(scanner.nextLong());
-        scanner.nextLine();
-
         System.out.print("Enter User Name: ");
         user.setName(scanner.nextLine().trim());
 

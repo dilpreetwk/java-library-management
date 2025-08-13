@@ -4,14 +4,21 @@ import org.example.java.libraray.management.exception.GlobalException;
 import org.example.java.libraray.management.model.User;
 import org.example.java.libraray.management.util.UserUtil;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.concurrent.atomic.AtomicLong;
 
 public class UserRepository {
 
     private final Map<Long, User> userMap = new HashMap<>();
+    private final AtomicLong idGenerator;
 
     public UserRepository() {
         userMap.putAll(UserUtil.defaultSeedUserMap());
+        idGenerator = new AtomicLong(userMap.size() + 1);
     }
 
     public User findById(Long id) {
@@ -20,10 +27,7 @@ public class UserRepository {
     }
 
     public User add(User user) {
-        if (user.getId() == null) {
-            throw new GlobalException("User ID cannot be null");
-        }
-
+        user.setId(idGenerator.getAndIncrement());
         userMap.put(user.getId(), user);
         return user;
     }
