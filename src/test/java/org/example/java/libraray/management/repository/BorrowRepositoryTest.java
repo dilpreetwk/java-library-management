@@ -9,7 +9,11 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class BorrowRepositoryTest {
 
@@ -23,7 +27,7 @@ public class BorrowRepositoryTest {
 
     @Test
     void borrowBook_ShouldBorrowBook() {
-        Borrow borrow = sampleBorrow(1L, 1L);
+        Borrow borrow = sampleBorrow();
         Borrow borrowedBook = borrowRepository.borrowBook(borrow);
 
         assertNotNull(borrowedBook);
@@ -34,7 +38,7 @@ public class BorrowRepositoryTest {
 
     @Test
     void returnBook_RecordPresent_ShouldReturnBook() {
-        Borrow borrow = sampleBorrow(1L, 1L);
+        Borrow borrow = sampleBorrow();
         Borrow borrowedBook = borrowRepository.borrowBook(borrow);
 
         Borrow returnedBook = borrowRepository.returnBook(borrowedBook.getId());
@@ -78,10 +82,10 @@ public class BorrowRepositoryTest {
         assertFalse(isBorrowed);
     }
 
-    private Borrow sampleBorrow(Long userId, Long bookId) {
+    private Borrow sampleBorrow() {
         Borrow borrow = new Borrow();
-        borrow.setUser(UserUtil.defaultSeedUserMap().get(userId));
-        borrow.setBook(BookUtil.defaultSeedBookMap().get(bookId));
+        borrow.setUser(UserUtil.defaultSeedUserMap().get(1L));
+        borrow.setBook(BookUtil.defaultSeedBookMap().get(1L));
         borrow.setBorrowDate(LocalDate.now());
         borrow.setReturnDate(LocalDate.now().plusDays(5));
         return borrow;
