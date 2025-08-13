@@ -10,7 +10,10 @@ public class LibraryCLIUtil {
         System.out.println("4. Search Book");
         System.out.println("5. Add User");
         System.out.println("6. List Users");
-        System.out.println("7. Exit");
+        System.out.println("7. Borrow Book");
+        System.out.println("8. Return Book");
+        System.out.println("9. List Borrowed Books");
+        System.out.println("10. Exit");
         System.out.print("Choose an option: ");
     }
 }
