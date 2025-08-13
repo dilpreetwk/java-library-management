@@ -21,7 +21,7 @@ public class BorrowRepository {
     }
 
     public Borrow borrowBook(Borrow borrow) {
-        borrow.setId(idGenerator.incrementAndGet());
+        borrow.setId(idGenerator.getAndIncrement());
         borrowMap.put(borrow.getId(), borrow);
         return borrow;
     }

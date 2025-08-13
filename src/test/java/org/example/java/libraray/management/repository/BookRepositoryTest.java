@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class BookRepositoryTest {
 
     private BookRepository bookRepository;
-    private Long booksSeeded = 5L;
+    private final Long booksSeeded = 5L;
 
     @BeforeEach
     void setUp() {
