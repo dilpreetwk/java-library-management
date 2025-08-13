@@ -4,10 +4,7 @@ import org.example.java.libraray.management.exception.GlobalException;
 import org.example.java.libraray.management.model.Book;
 import org.example.java.libraray.management.util.BookUtil;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class BookRepository {
 
@@ -18,11 +15,8 @@ public class BookRepository {
     }
 
     public Book findById(Long id) {
-        if (!bookMap.containsKey(id)) {
-            throw new GlobalException("Book not found with id: " + id);
-        }
-
-        return bookMap.get(id);
+        return Optional.ofNullable(bookMap.get(id))
+                .orElseThrow(() -> new GlobalException("Book not found with id: " + id));
     }
 
     public List<Book> findAll() {

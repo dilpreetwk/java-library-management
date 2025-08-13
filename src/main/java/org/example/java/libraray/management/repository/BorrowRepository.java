@@ -32,4 +32,10 @@ public class BorrowRepository {
     public List<Borrow> findAll() {
         return new ArrayList<>(borrowMap.values());
     }
+
+    public Integer countUserBorrowedBooks(Long userId) {
+        return (int) borrowMap.values().stream()
+                .filter(borrow -> borrow.getUser().getId().equals(userId))
+                .count();
+    }
 }

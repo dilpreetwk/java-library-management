@@ -1,6 +1,7 @@
 package org.example.java.libraray.management.service;
 
 import org.example.java.libraray.management.dto.BorrowOperationDTO;
+import org.example.java.libraray.management.exception.GlobalException;
 import org.example.java.libraray.management.model.Book;
 import org.example.java.libraray.management.model.Borrow;
 import org.example.java.libraray.management.model.Policy;
@@ -27,6 +28,11 @@ public class BorrowService {
 
         Book book = bookRepository.findById(borrowOperationDTO.getBookId());
         User user = userRepository.findById(borrowOperationDTO.getUserId());
+
+        // check if user has reached borrow limit
+        if (borrowRepository.countUserBorrowedBooks(user.getId()) >= policy.getBorrowLimit()) {
+            throw new GlobalException("User has reached the maximum borrow limit!");
+        }
 
         Borrow borrow = new Borrow();
         borrow.setId(borrowOperationDTO.getId());

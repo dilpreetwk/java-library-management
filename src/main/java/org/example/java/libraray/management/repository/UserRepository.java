@@ -4,10 +4,7 @@ import org.example.java.libraray.management.exception.GlobalException;
 import org.example.java.libraray.management.model.User;
 import org.example.java.libraray.management.util.UserUtil;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class UserRepository {
 
@@ -18,7 +15,8 @@ public class UserRepository {
     }
 
     public User findById(Long id) {
-        return userMap.get(id);
+        return Optional.ofNullable(userMap.get(id))
+                .orElseThrow(() -> new GlobalException("User not found with id: " + id));
     }
 
     public User add(User user) {
