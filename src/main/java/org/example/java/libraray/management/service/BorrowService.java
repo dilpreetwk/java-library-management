@@ -34,6 +34,11 @@ public class BorrowService {
             throw new GlobalException("User has reached the maximum borrow limit!");
         }
 
+        // check if book is already borrowed
+        if (borrowRepository.isBookBorrowed(book.getId())) {
+            throw new GlobalException("Book is already borrowed by another user!");
+        }
+
         Borrow borrow = new Borrow();
         borrow.setId(borrowOperationDTO.getId());
         borrow.setBook(book);

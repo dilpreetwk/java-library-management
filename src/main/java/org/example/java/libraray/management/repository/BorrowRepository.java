@@ -38,4 +38,9 @@ public class BorrowRepository {
                 .filter(borrow -> borrow.getUser().getId().equals(userId))
                 .count();
     }
+
+    public Boolean isBookBorrowed(Long bookId) {
+        return borrowMap.values().stream()
+                .anyMatch(borrow -> borrow.getBook().getId().equals(bookId));
+    }
 }
