@@ -36,12 +36,12 @@ public class BookRepository {
         return book;
     }
 
-    public void update(Book book) {
+    public Book update(Book book) {
         if (book.getId() == null || !bookMap.containsKey(book.getId())) {
             throw new GlobalException("Book not found with id: " + book.getId());
         }
 
-        bookMap.put(book.getId(), book);
+        return bookMap.put(book.getId(), book);
     }
 
     public Book delete(Long id) {
