@@ -3,7 +3,8 @@ package org.example.java.libraray.management.repository;
 
 import org.example.java.libraray.management.core.exception.GlobalException;
 import org.example.java.libraray.management.core.model.Book;
-import org.example.java.libraray.management.infra.repository.BookRepository;
+import org.example.java.libraray.management.core.repository.BookRepository;
+import org.example.java.libraray.management.infra.memory.InMemoryBookRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -21,7 +22,7 @@ class BookRepositoryTest {
 
     @BeforeEach
     void setUp() {
-        bookRepository = new BookRepository();
+        bookRepository = new InMemoryBookRepository();
     }
 
     @Test

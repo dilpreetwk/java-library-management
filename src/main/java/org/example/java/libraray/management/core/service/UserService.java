@@ -2,7 +2,7 @@ package org.example.java.libraray.management.core.service;
 
 import lombok.RequiredArgsConstructor;
 import org.example.java.libraray.management.core.model.User;
-import org.example.java.libraray.management.infra.repository.UserRepository;
+import org.example.java.libraray.management.core.repository.UserRepository;
 import org.example.java.libraray.management.util.UserUtil;
 
 @RequiredArgsConstructor

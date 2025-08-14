@@ -4,8 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.example.java.libraray.management.core.exception.GlobalException;
 import org.example.java.libraray.management.core.model.Book;
 import org.example.java.libraray.management.core.model.User;
-import org.example.java.libraray.management.infra.repository.BookRepository;
-import org.example.java.libraray.management.infra.repository.UserRepository;
+import org.example.java.libraray.management.core.repository.BookRepository;
+import org.example.java.libraray.management.core.repository.UserRepository;
 import org.example.java.libraray.management.util.BookUtil;
 
 import java.time.LocalDate;

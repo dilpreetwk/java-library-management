@@ -2,7 +2,8 @@ package org.example.java.libraray.management.repository;
 
 import org.example.java.libraray.management.core.exception.GlobalException;
 import org.example.java.libraray.management.core.model.User;
-import org.example.java.libraray.management.infra.repository.UserRepository;
+import org.example.java.libraray.management.core.repository.UserRepository;
+import org.example.java.libraray.management.infra.memory.InMemoryUserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -18,7 +19,7 @@ public class UserRepositoryTest {
 
     @BeforeEach
     void setUp() {
-        userRepository = new UserRepository();
+        userRepository = new InMemoryUserRepository();
     }
 
     @Test
