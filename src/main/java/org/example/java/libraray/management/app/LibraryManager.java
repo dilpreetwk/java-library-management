@@ -1,13 +1,13 @@
 package org.example.java.libraray.management.app;
 
 import org.example.java.libraray.management.core.exception.GlobalException;
-import org.example.java.libraray.management.infra.registry.ServiceRegistry;
 import org.example.java.libraray.management.util.LibraryCLIUtil;
 
 import java.util.Scanner;
 
 public class LibraryManager {
     private final Scanner scanner = new Scanner(System.in);
+    private final ApplicationConfig appConfig = new ApplicationConfig();
 
     public void start() {
         while (true) {
@@ -16,15 +16,15 @@ public class LibraryManager {
 
             try {
                 switch (choice) {
-                    case "1" -> ServiceRegistry.bookService().addBook();
-                    case "2" -> ServiceRegistry.bookService().updateBook();
-                    case "3" -> ServiceRegistry.bookService().listBooks();
-                    case "4" -> ServiceRegistry.bookService().searchBooks();
-                    case "5" -> ServiceRegistry.userService().addUser();
-                    case "6" -> ServiceRegistry.userService().listUsers();
-                    case "7" -> ServiceRegistry.bookService().borrowBook();
-                    case "8" -> ServiceRegistry.bookService().returnBook();
-                    case "9" -> ServiceRegistry.bookService().listBorrowedBooks();
+                    case "1" -> appConfig.bookService().addBook();
+                    case "2" -> appConfig.bookService().updateBook();
+                    case "3" -> appConfig.bookService().listBooks();
+                    case "4" -> appConfig.bookService().searchBooks();
+                    case "5" -> appConfig.userService().addUser();
+                    case "6" -> appConfig.userService().listUsers();
+                    case "7" -> appConfig.bookService().borrowBook();
+                    case "8" -> appConfig.bookService().returnBook();
+                    case "9" -> appConfig.bookService().listBorrowedBooks();
                     case "10" -> {
                         System.out.println("Exiting the application. Goodbye!");
                         scanner.close();

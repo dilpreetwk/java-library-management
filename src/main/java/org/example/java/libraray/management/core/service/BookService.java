@@ -1,19 +1,22 @@
 package org.example.java.libraray.management.core.service;
 
+import lombok.RequiredArgsConstructor;
 import org.example.java.libraray.management.core.exception.GlobalException;
 import org.example.java.libraray.management.core.model.Book;
 import org.example.java.libraray.management.core.model.User;
-import org.example.java.libraray.management.infra.registry.RepositoryRegistry;
 import org.example.java.libraray.management.infra.repository.BookRepository;
+import org.example.java.libraray.management.infra.repository.UserRepository;
 import org.example.java.libraray.management.util.BookUtil;
 
 import java.time.LocalDate;
 import java.util.Scanner;
 
+@RequiredArgsConstructor
 public class BookService {
 
-    private final BookRepository bookRepository = RepositoryRegistry.bookRepository();
-    private final Scanner scanner = new Scanner(System.in);
+    private final BookRepository bookRepository;
+    private final UserRepository userRepository;
+    private final Scanner scanner;
 
     public void addBook() {
         Book book = BookUtil.inputBookAddDetails();
@@ -57,7 +60,7 @@ public class BookService {
         System.out.print("Enter user ID that will borrow: ");
         Long userId = scanner.nextLong();
         scanner.nextLine();
-        User user = RepositoryRegistry.userRepository().findById(userId);
+        User user = userRepository.findById(userId);
 
         book.setBorrowedBy(user);
         book.setBorrowDate(LocalDate.now());
