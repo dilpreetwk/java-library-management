@@ -1,8 +1,8 @@
-package org.example.java.libraray.management.registry;
+package org.example.java.libraray.management.infra.registry;
 
-import org.example.java.libraray.management.service.BookService;
-import org.example.java.libraray.management.service.BorrowService;
-import org.example.java.libraray.management.service.UserService;
+import org.example.java.libraray.management.core.service.BookService;
+import org.example.java.libraray.management.core.service.BorrowService;
+import org.example.java.libraray.management.core.service.UserService;
 
 public class ServiceRegistry {
 

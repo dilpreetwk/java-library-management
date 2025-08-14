@@ -1,4 +1,4 @@
-package org.example.java.libraray.management.dto;
+package org.example.java.libraray.management.core.dto;
 
 import lombok.Data;
 

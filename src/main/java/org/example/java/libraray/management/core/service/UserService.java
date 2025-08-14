@@ -1,8 +1,8 @@
-package org.example.java.libraray.management.service;
+package org.example.java.libraray.management.core.service;
 
-import org.example.java.libraray.management.model.User;
-import org.example.java.libraray.management.registry.RepositoryRegistry;
-import org.example.java.libraray.management.repository.UserRepository;
+import org.example.java.libraray.management.core.model.User;
+import org.example.java.libraray.management.infra.registry.RepositoryRegistry;
+import org.example.java.libraray.management.infra.repository.UserRepository;
 import org.example.java.libraray.management.util.UserUtil;
 
 import java.util.Scanner;

@@ -1,7 +1,7 @@
-package org.example.java.libraray.management;
+package org.example.java.libraray.management.app;
 
-import org.example.java.libraray.management.exception.GlobalException;
-import org.example.java.libraray.management.registry.ServiceRegistry;
+import org.example.java.libraray.management.core.exception.GlobalException;
+import org.example.java.libraray.management.infra.registry.ServiceRegistry;
 import org.example.java.libraray.management.util.LibraryCLIUtil;
 
 import java.util.Scanner;

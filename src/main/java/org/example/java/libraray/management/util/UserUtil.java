@@ -1,6 +1,6 @@
 package org.example.java.libraray.management.util;
 
-import org.example.java.libraray.management.model.User;
+import org.example.java.libraray.management.core.model.User;
 
 import java.util.HashMap;
 import java.util.Map;

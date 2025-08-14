@@ -1,4 +1,4 @@
-package org.example.java.libraray.management.exception;
+package org.example.java.libraray.management.core.exception;
 
 public class GlobalException extends RuntimeException{
 

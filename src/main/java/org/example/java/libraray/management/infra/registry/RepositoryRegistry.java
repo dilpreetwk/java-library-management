@@ -1,8 +1,8 @@
-package org.example.java.libraray.management.registry;
+package org.example.java.libraray.management.infra.registry;
 
-import org.example.java.libraray.management.repository.BookRepository;
-import org.example.java.libraray.management.repository.BorrowRepository;
-import org.example.java.libraray.management.repository.UserRepository;
+import org.example.java.libraray.management.infra.repository.BookRepository;
+import org.example.java.libraray.management.infra.repository.BorrowRepository;
+import org.example.java.libraray.management.infra.repository.UserRepository;
 
 public class RepositoryRegistry {
 

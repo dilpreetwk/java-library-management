@@ -1,6 +1,6 @@
 package org.example.java.libraray.management.util;
 
-import org.example.java.libraray.management.model.Book;
+import org.example.java.libraray.management.core.model.Book;
 
 import java.util.HashMap;
 import java.util.Map;

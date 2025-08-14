@@ -1,8 +1,8 @@
-package org.example.java.libraray.management.service;
+package org.example.java.libraray.management.core.service;
 
-import org.example.java.libraray.management.model.Book;
-import org.example.java.libraray.management.registry.RepositoryRegistry;
-import org.example.java.libraray.management.repository.BookRepository;
+import org.example.java.libraray.management.core.model.Book;
+import org.example.java.libraray.management.infra.registry.RepositoryRegistry;
+import org.example.java.libraray.management.infra.repository.BookRepository;
 import org.example.java.libraray.management.util.BookUtil;
 
 import java.util.Scanner;

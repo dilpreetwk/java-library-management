@@ -1,7 +1,8 @@
 package org.example.java.libraray.management.repository;
 
-import org.example.java.libraray.management.exception.GlobalException;
-import org.example.java.libraray.management.model.Borrow;
+import org.example.java.libraray.management.core.exception.GlobalException;
+import org.example.java.libraray.management.core.model.Borrow;
+import org.example.java.libraray.management.infra.repository.BorrowRepository;
 import org.example.java.libraray.management.util.BookUtil;
 import org.example.java.libraray.management.util.UserUtil;
 import org.junit.jupiter.api.BeforeEach;

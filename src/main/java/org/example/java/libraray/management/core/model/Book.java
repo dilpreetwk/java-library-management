@@ -1,4 +1,4 @@
-package org.example.java.libraray.management.model;
+package org.example.java.libraray.management.core.model;
 
 import lombok.Data;
 

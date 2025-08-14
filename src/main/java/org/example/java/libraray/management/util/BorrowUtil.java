@@ -1,10 +1,10 @@
 package org.example.java.libraray.management.util;
 
-import org.example.java.libraray.management.dto.BorrowOperationDTO;
-import org.example.java.libraray.management.model.Book;
-import org.example.java.libraray.management.model.Borrow;
-import org.example.java.libraray.management.model.Policy;
-import org.example.java.libraray.management.model.User;
+import org.example.java.libraray.management.core.dto.BorrowOperationDTO;
+import org.example.java.libraray.management.core.model.Book;
+import org.example.java.libraray.management.core.model.Borrow;
+import org.example.java.libraray.management.core.model.Policy;
+import org.example.java.libraray.management.core.model.User;
 
 import java.time.LocalDate;
 import java.util.HashMap;

@@ -1,7 +1,7 @@
-package org.example.java.libraray.management.repository;
+package org.example.java.libraray.management.infra.repository;
 
-import org.example.java.libraray.management.exception.GlobalException;
-import org.example.java.libraray.management.model.Book;
+import org.example.java.libraray.management.core.exception.GlobalException;
+import org.example.java.libraray.management.core.model.Book;
 import org.example.java.libraray.management.util.BookUtil;
 
 import java.util.ArrayList;

@@ -1,15 +1,15 @@
-package org.example.java.libraray.management.service;
+package org.example.java.libraray.management.core.service;
 
-import org.example.java.libraray.management.dto.BorrowOperationDTO;
-import org.example.java.libraray.management.exception.GlobalException;
-import org.example.java.libraray.management.model.Book;
-import org.example.java.libraray.management.model.Borrow;
-import org.example.java.libraray.management.model.Policy;
-import org.example.java.libraray.management.model.User;
-import org.example.java.libraray.management.registry.RepositoryRegistry;
-import org.example.java.libraray.management.repository.BookRepository;
-import org.example.java.libraray.management.repository.BorrowRepository;
-import org.example.java.libraray.management.repository.UserRepository;
+import org.example.java.libraray.management.core.dto.BorrowOperationDTO;
+import org.example.java.libraray.management.core.exception.GlobalException;
+import org.example.java.libraray.management.core.model.Book;
+import org.example.java.libraray.management.core.model.Borrow;
+import org.example.java.libraray.management.core.model.Policy;
+import org.example.java.libraray.management.core.model.User;
+import org.example.java.libraray.management.infra.registry.RepositoryRegistry;
+import org.example.java.libraray.management.infra.repository.BookRepository;
+import org.example.java.libraray.management.infra.repository.BorrowRepository;
+import org.example.java.libraray.management.infra.repository.UserRepository;
 import org.example.java.libraray.management.util.BorrowUtil;
 
 import java.time.LocalDate;
