@@ -6,7 +6,7 @@ import org.example.java.libraray.management.util.LibraryCLIUtil;
 
 import java.util.Scanner;
 
-public class LibraryCLI {
+public class LibraryManager {
     private final Scanner scanner = new Scanner(System.in);
 
     public void start() {
@@ -22,9 +22,9 @@ public class LibraryCLI {
                     case "4" -> ServiceRegistry.bookService().searchBooks();
                     case "5" -> ServiceRegistry.userService().addUser();
                     case "6" -> ServiceRegistry.userService().listUsers();
-                    case "7" -> ServiceRegistry.borrowService().borrowBook();
-                    case "8" -> ServiceRegistry.borrowService().returnBook();
-                    case "9" -> ServiceRegistry.borrowService().listBorrowedBooks();
+                    case "7" -> ServiceRegistry.bookService().borrowBook();
+                    case "8" -> ServiceRegistry.bookService().returnBook();
+                    case "9" -> ServiceRegistry.bookService().listBorrowedBooks();
                     case "10" -> {
                         System.out.println("Exiting the application. Goodbye!");
                         scanner.close();

@@ -1,11 +1,11 @@
 package org.example.java.libraray.management;
 
-import org.example.java.libraray.management.app.LibraryCLI;
+import org.example.java.libraray.management.app.LibraryManager;
 
 public class Main {
 
     public static void main(String[] args) {
-        LibraryCLI libraryCLI = new LibraryCLI();
+        LibraryManager libraryCLI = new LibraryManager();
         libraryCLI.start();
     }
 }
