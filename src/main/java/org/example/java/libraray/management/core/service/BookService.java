@@ -1,6 +1,7 @@
 package org.example.java.libraray.management.core.service;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.example.java.libraray.management.core.exception.GlobalException;
 import org.example.java.libraray.management.core.model.Book;
 import org.example.java.libraray.management.core.model.User;
@@ -12,6 +13,7 @@ import java.time.LocalDate;
 import java.util.Scanner;
 
 @RequiredArgsConstructor
+@Slf4j
 public class BookService {
 
     private final BookRepository bookRepository;
@@ -21,7 +23,7 @@ public class BookService {
     public void addBook() {
         Book book = BookUtil.inputBookAddDetails();
         bookRepository.add(book);
-        System.out.println("✅ Book added successfully!");
+        log.info("✅ Book added successfully");
     }
 
     public void updateBook() {
@@ -33,7 +35,7 @@ public class BookService {
         Book updatedBook = BookUtil.inputBookUpdateDetails(existingBook);
 
         bookRepository.update(updatedBook);
-        System.out.println("✅ Book updated successfully!");
+        log.info("✅ Book updated successfully!");
     }
 
     public void listBooks() {
@@ -66,7 +68,7 @@ public class BookService {
         book.setBorrowDate(LocalDate.now());
         book.setDueDate(LocalDate.now().plusDays(5));
 
-        System.out.println("✅ Book borrowed successfully by " + user.getName());
+        log.info("✅ Book borrowed successfully by {}", user.getName());
     }
 
     public void returnBook() {
@@ -84,7 +86,7 @@ public class BookService {
         book.setBorrowDate(null);
         book.setDueDate(null);
 
-        System.out.println("✅ Book returned successfully!");
+        log.info("✅ Book returned successfully!");
     }
 
     public void listBorrowedBooks() {

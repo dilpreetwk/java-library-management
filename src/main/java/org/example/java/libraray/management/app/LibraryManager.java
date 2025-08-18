@@ -1,10 +1,12 @@
 package org.example.java.libraray.management.app;
 
+import lombok.extern.slf4j.Slf4j;
 import org.example.java.libraray.management.core.exception.GlobalException;
 import org.example.java.libraray.management.util.LibraryCLIUtil;
 
 import java.util.Scanner;
 
+@Slf4j
 public class LibraryManager {
     private final Scanner scanner = new Scanner(System.in);
     private final ApplicationConfig appConfig = new ApplicationConfig();
@@ -26,14 +28,14 @@ public class LibraryManager {
                     case "8" -> appConfig.bookService().returnBook();
                     case "9" -> appConfig.bookService().listBorrowedBooks();
                     case "10" -> {
-                        System.out.println("Exiting the application. Goodbye!");
+                        log.info("Exiting the application.");
                         scanner.close();
                         return;
                     }
-                    default -> System.out.println("Invalid choice.");
+                    default -> log.warn("Invalid choice. Please try again.");
                 }
             } catch (GlobalException e) {
-                System.out.println("⚠️ " + e.getMessage());
+                log.warn("⚠️ {}", e.getMessage());
             }
         }
     }
